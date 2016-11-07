@@ -1,0 +1,25 @@
+package com.hexincad.utils;
+
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+
+public class PathUtils {
+	public static String getResourcesPath(HttpServletRequest request,String fromProjectRootPath){
+		if(request==null)   return "./src/"+fromProjectRootPath;
+		return request.getSession().getServletContext().getRealPath( "")+"/WEB-INF/classes/"+fromProjectRootPath;
+	}
+	
+	public static String getWebClassPath(HttpServletRequest request){
+		return request.getSession().getServletContext().getRealPath("")+"/WEB-INF/classes/";
+	}
+	
+	public static String getResourcesPath(ServletContext context,String fromProjectRootPath){
+		if(context==null)   return "./src/"+fromProjectRootPath;
+		return context.getRealPath( "")+"/WEB-INF/classes/"+fromProjectRootPath;
+	}
+	
+	public static String getWebClassPath(ServletContext context){
+		return context.getRealPath("")+"/WEB-INF/classes/";
+	}
+
+}

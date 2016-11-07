@@ -19,16 +19,29 @@
         <version>2.6</version>
         <configuration>
           <failOnMissingWebXml>false</failOnMissingWebXml>
+          <overlays>
+          	<overlay></overlay><!-- 配置为空表示自身 -->
+          </overlays>
         </configuration>
       </plugin>
     </plugins>
   </build>
   <dependencies>
-  	<dependency>
-  		<groupId>com.hexincad.webcad</groupId>
-  		<artifactId>common-lib</artifactId>
-  		<version>0.02</version>
-  		<type>war</type>
-  	</dependency>
+	  	<dependency>
+	  		<groupId>com.hexincad.webcad</groupId>
+	  		<artifactId>common-lib</artifactId>
+	  		<version>0.02</version>
+	  		<type>jar</type>
+	  	</dependency>
+	<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>javax.servlet-api</artifactId>
+		    <version>3.1.0</version>
+		    <scope>provided</scope>
+		</dependency>	
+		
+
+				
   </dependencies>
 </project>
